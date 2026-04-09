@@ -1,4 +1,4 @@
-import row
+import jeu.row as row
 class board: 
     """Classe permettant de représenter le plateau de jeu"""
     
