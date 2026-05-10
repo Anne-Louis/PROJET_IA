@@ -5,7 +5,6 @@ from statistics import mean
 from jeu.joueur import Joueur
 from jeu.etatJeu import EtatJeu
 
-# IA
 import ia.ia_facile as ia_facile
 import ia.ia_moyenne as ia_moyenne
 import ia.ia_difficile as ia_difficile

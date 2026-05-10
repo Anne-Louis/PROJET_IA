@@ -7,10 +7,6 @@ import ia.ia_moyenne as ia_moyenne
 import ia.ia_difficile as ia_difficile
 
 
-# ==========================================
-# AFFICHAGE
-# ==========================================
-
 def afficher_main(joueur: Joueur):
     print(f"\nMain de {joueur.nom} :")
     for i, carte in enumerate(joueur.main):
@@ -28,10 +24,6 @@ def afficher_gagnant(etat: EtatJeu):
     else:
         print("\n=== Partie terminée ! Égalité ! ===")
 
-
-# ==========================================
-# TOUR HUMAIN
-# ==========================================
 
 def tour_humain(etat: EtatJeu) -> Action:
     joueur = etat.get_joueur_courant()
@@ -53,20 +45,12 @@ def tour_humain(etat: EtatJeu) -> Action:
             print("Entrée invalide, réessayez.")
 
 
-# ==========================================
-# TOUR IA
-# ==========================================
-
 def tour_ia(etat: EtatJeu, ia) -> Action:
     print("\nL'IA réfléchit...")
     action = ia.choisir_action(etat)
     print(f"L'IA joue : {action}")
     return action
 
-
-# ==========================================
-# BOUCLE DE JEU GÉNÉRIQUE
-# ==========================================
 
 def boucle_jeu(etat: EtatJeu, ia=None):
     """
@@ -84,7 +68,6 @@ def boucle_jeu(etat: EtatJeu, ia=None):
             afficher_scores(etat)
             print(f"\nTour de {joueur.nom}")
 
-            # Déterminer si c'est un humain ou une IA
             est_ia = (ia is not None and joueur == etat.joueurs[1])
 
             if est_ia:
@@ -94,7 +77,6 @@ def boucle_jeu(etat: EtatJeu, ia=None):
 
             etat.appliquer_action(action)
 
-        # Fin de manche
         etat.terminer_manche()
 
         print(f"\n--- Fin de la manche ---")
@@ -103,10 +85,6 @@ def boucle_jeu(etat: EtatJeu, ia=None):
 
     afficher_gagnant(etat)
 
-
-# ==========================================
-# MENU
-# ==========================================
 
 def choisir_ia():
     print("\nChoisissez le niveau de l'IA :")
@@ -157,10 +135,6 @@ def menu():
         else:
             print("Choix invalide.")
 
-
-# ==========================================
-# MAIN
-# ==========================================
 
 if __name__ == "__main__":
     menu()

@@ -1,12 +1,17 @@
 from ia.minimax import alphabeta
 from ia.evaluation import evaluation_difficile
 
-
 PROFONDEUR = 5
 
-
-
 def choisir_action(etat):
+    """
+    Fonction principale utilisée par l'IA.
+
+    Elle appelle l'algorithme Alpha-Bêta pour :
+    - explorer les coups possibles
+    - choisir l'action optimale selon l'évaluation difficile
+    """
+
     joueur_max = etat.get_joueur_courant()
 
     _, action = alphabeta(
@@ -22,6 +27,19 @@ def choisir_action(etat):
 
 
 def choisir_action_debug(etat):
+    """
+    Version debug de l'IA.
+
+    Permet de :
+    - tester toutes les actions possibles
+    - récupérer les scores associés
+    - observer le comportement de l'algorithme Alpha-Bêta
+
+    Utile pour analyser :
+    - pourquoi une action est choisie
+    - la qualité de la fonction d'évaluation
+    - la stabilité des décisions
+    """
 
     joueur_max = etat.get_joueur_courant()
 
@@ -31,7 +49,6 @@ def choisir_action_debug(etat):
     meilleur_score = float("-inf")
 
     for action in etat.actions_possibles():
-
         copie = etat.copier()
         copie.appliquer_action(action)
 
