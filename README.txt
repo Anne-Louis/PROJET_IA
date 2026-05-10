@@ -1,7 +1,7 @@
-1. Pour lancer le projet, depuis un terminal aller dans le répertoir PROJET_IA/
+1. Pour lancer le projet, depuis un terminal aller dans le répertoir PROJET_IA-main/
 puis rentrer la commande : python main.py    ou    python3 main.py
 
-2. Pour lancer les tests unitaires, depuis un terminal aller dans le répertoir PROJET_IA/
+2. Pour lancer les tests unitaires, depuis un terminal aller dans le répertoir PROJET_IA-main/
 puis rentrer la commande : python -m unittest discover tests   ou
                            python3 -m unittest discover tests
 
